@@ -1,0 +1,32 @@
+{
+    "name": snide/zf-redmon",
+    "description": "Zend Framework 2 Redis monitoring Module",
+    "type": "library",
+    "license": "MIT",
+    "keywords": [
+        "redis",
+        "monitoring",
+        "module",
+        "zf2"
+    ],
+    "homepage": "https://github.com/pdenis/zf-redmon",
+    "authors": [
+        {
+            "name": "Pascal DENIS",
+            "email": "pascal.denis.75@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=5.3.3",
+        "zendframework/zendframework": "2.*",
+    },
+    "autoload": {
+        "psr-0": {
+            "Snide\Redmon": "src/"
+        },
+        "classmap": [
+            "./Module.php"
+        ]
+    }
+}
