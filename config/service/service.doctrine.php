@@ -2,9 +2,9 @@
 
 return array(
 	'invokables' => array(
-		'snide_redmon.entity.instance' => 'Snide\Redmon\Entity\Instance',
-		'snide_redmon.entity.log'      => 'Snide\Redmon\Entity\Log',
-		'snide_redmon.entity.database' => 'Snide\Redmon\Entity\Database',
+		'snide_redmon.entity.instance' => 'SnideRedmon\Entity\Instance',
+		'snide_redmon.entity.log'      => 'SnideRedmon\Entity\Log',
+		'snide_redmon.entity.database' => 'SnideRedmon\Entity\Database',
 	),
 	'factories' => array(
         'snide_redmon.repository.instance' => function($sm) {

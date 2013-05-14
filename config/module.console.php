@@ -7,7 +7,7 @@ return array(
                 'options' => array(
                     'route' => 'snide-redmon log', 
                     'defaults' => array(
-                        'controller' => 'Snide\Redmon\Controller\Command',
+                        'controller' => 'SnideRedmon\Controller\Command',
                         'action' => 'execute'
                     ),
                 ),

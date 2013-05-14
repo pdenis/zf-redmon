@@ -1,0 +1,46 @@
+<?php if ($instances) { ?>
+        <h2>Please, choose a Redis Instance</h2>
+        
+        <table  class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Host</th>
+                    <th>Port</th>
+                    <th>State</th>
+                    <th>Message</th>
+                    <th>Action(s)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach($instances as $instance) { ?>
+                    <tr>
+                        <td><?= $instance->getName() ?></td>
+                        <td><?= $instance->getHost() ?></td>
+                        <td><?= $instance->getPort() ?></td>
+                        <td>
+                            <?php if ($instance->isWorking()) { ?>
+                                <img width="30" src="<?= $this->basePath() . '/modules/snide_redmon/img/green.png' ?>" />
+                            <?php }else { ?>
+                                <img  width="30"  src="<?= $this->basePath() . '/modules/snide_redmon/img/red.png' ?>" />
+                            <?php } ?>
+                        </td>
+                        <td><?= $instance->getError() ?></td>
+                        <td>
+                            <?php if ($instance->isWorking()) { ?>
+                                <a href="<?= $this->url('snide_redmon_instance/select', array('id' => $instance->getId())) ?>">Choose</a> | 
+                                <a href="<?= $this->url('snide_redmon_instance/edit', array('id' => $instance->getId())) ?>">Edit</a>
+                            <?php }else { ?>
+                                <a href="<?= $this->url('snide_redmon_instance/edit', array('id' => $instance->getId())) ?>">Edit</a>
+                            <?php } ?>
+                        </td>
+                        
+                    </tr>
+                <?php } ?>
+            </tbody>
+        </table>
+<?php }else { ?>
+    <h2>No redis instance found</h2>
+<?php } ?>
+<p>To add a Redis Instance, <a href="<?= $this->url('snide_redmon_instance/new') ?>">click here</a></p>
+  

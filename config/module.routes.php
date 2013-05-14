@@ -7,7 +7,7 @@ return array(
             'options' => array(
                 'route'    => '/',
                 'defaults' => array(
-                    'controller' => 'Snide\Redmon\Controller\Dash',
+                    'controller' => 'SnideRedmon\Controller\Dash',
                     'action'     => 'index'
                 ),
             ),
@@ -38,7 +38,7 @@ return array(
             'options' => array(
                 'route'    => '/instances',
                 'defaults' => array(
-                    'controller' => 'Snide\Redmon\Controller\Instance',
+                    'controller' => 'SnideRedmon\Controller\Instance',
                     'action'     => 'index'
                 ),
             ),
@@ -52,7 +52,7 @@ return array(
                             'id' => '[0-9]+'
                         ),
                         'defaults' => array(
-                            'controller' => 'Snide\Redmon\Controller\Instance',
+                            'controller' => 'SnideRedmon\Controller\Instance',
                             'action' => 'update'
                         )
                     )
@@ -65,7 +65,7 @@ return array(
                             'id' => '[0-9]+'
                         ),
                         'defaults' => array(
-                            'controller' => 'Snide\Redmon\Controller\Instance',
+                            'controller' => 'SnideRedmon\Controller\Instance',
                             'action' => 'select'
                         )
                     )
@@ -78,7 +78,7 @@ return array(
                             'id' => '[0-9]+'
                         ),
                         'defaults'    => array(
-                            'controller' => 'Snide\Redmon\Controller\Instance',
+                            'controller' => 'SnideRedmon\Controller\Instance',
                             'action' => 'delete'
                         )
                     )
@@ -98,7 +98,7 @@ return array(
                         'route'    => '/update',
                         'verb'     => 'post',
                         'defaults' => array(
-                            'controller' => 'Snide\Redmon\Controller\Instance',
+                            'controller' => 'SnideRedmon\Controller\Instance',
                             'action' => 'update'
                         )
                     )
@@ -109,7 +109,7 @@ return array(
                         'route'    => '/create',
                         'verb' => 'post',
                         'defaults' => array(
-                            'controller' => 'Snide\Redmon\Controller\Instance',
+                            'controller' => 'SnideRedmon\Controller\Instance',
                             'action' => 'create'
                         )
                     )

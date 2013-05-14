@@ -9,7 +9,7 @@ return array(
 			if(isset($config['snide_redmon.entity.instance.class'])) {
 				$class = $config['snide_redmon.entity.instance.class'];
 			}
-			return new \Snide\Redmon\Manager\InstanceManager($instanceRepository, $class);
+			return new \SnideRedmon\Manager\InstanceManager($instanceRepository, $class);
         },
         'snide_redmon.manager.log' => function($sm) {
 			$logRepository = $sm->get('snide_redmon.repository.log');
@@ -18,7 +18,7 @@ return array(
 			if(isset($config['snide_redmon.entity.log.class'])) {
 				$class = $config['snide_redmon.entity.log.class'];
 			}
-			return new \Snide\Redmon\Manager\LogManager($logRepository, $class);
+			return new \SnideRedmon\Manager\LogManager($logRepository, $class);
         }
     ),
 );

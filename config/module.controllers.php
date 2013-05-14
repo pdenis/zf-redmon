@@ -2,8 +2,8 @@
 
 return array(
     'invokables' => array(
-        'Snide\Redmon\Controller\Dash'     => 'Snide\Redmon\Controller\DashController',
-        'Snide\Redmon\Controller\Command'  => 'Snide\Redmon\Controller\CommandController',
-        'Snide\Redmon\Controller\Instance' => 'Snide\Redmon\Controller\InstanceController',
+        'SnideRedmon\Controller\Dash'     => 'SnideRedmon\Controller\DashController',
+        'SnideRedmon\Controller\Command'  => 'SnideRedmon\Controller\CommandController',
+        'SnideRedmon\Controller\Instance' => 'SnideRedmon\Controller\InstanceController',
     ),
 );

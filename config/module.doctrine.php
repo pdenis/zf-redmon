@@ -5,11 +5,11 @@ return array(
 		'snide_redmon_entities' => array(
 			'class' =>'Doctrine\ORM\Mapping\Driver\AnnotationDriver',
 			'cache' => 'array',
-			'paths' => array(__DIR__ . '/../src/Snide/Redmon/Entity')
+			'paths' => array(__DIR__ . '/../src/SnideRedmon/Entity')
 		),
 		'orm_default' => array(
 			'drivers' => array(
-				'Snide\Redmon\Entity' => 'snide_redmon_entities'
+				'SnideRedmon\Entity' => 'snide_redmon_entities'
 			)
 		)
 	)

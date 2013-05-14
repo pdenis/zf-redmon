@@ -2,6 +2,6 @@
 
 return array(
 	'invokables' => array(
-		'snide_redmon.worker.instance' => 'Snide\Redmon\Worker\InstanceWorker'
+		'snide_redmon.worker.instance' => 'SnideRedmon\Worker\InstanceWorker'
 	)
 );
