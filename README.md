@@ -15,7 +15,6 @@ Redis monitoring module for ZF2
 ```
 Add module in your applcation.config.php
 
-### Using composer
 ```php
 <?php
 
@@ -27,6 +26,7 @@ return array(
         ...
 ```
 
+Symlink public module subfolders into yourApp/public/modules/snide_redmon
 
 ### Dependencies
 
