@@ -1,5 +1,5 @@
 {
-    "name": snide/zf-redmon",
+    "name": "snide/zf-redmon",
     "description": "Zend Framework 2 Redis monitoring Module",
     "type": "library",
     "license": "MIT",
@@ -20,6 +20,8 @@
     "require": {
         "php": ">=5.3.3",
         "zendframework/zendframework": "2.*",
+        "doctrine/doctrine-orm-module": "0.7.0",
+        "predis/predis": "dev-master"
     },
     "autoload": {
         "psr-0": {
