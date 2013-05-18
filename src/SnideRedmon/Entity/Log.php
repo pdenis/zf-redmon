@@ -19,8 +19,9 @@
 
 namespace SnideRedmon\Entity;
 
-use SnideRedmon\Model\Log as ModelLog;
+use Ringo\PhpRedmon\Entity\Log as BaseLog;
 use Doctrine\ORM\Mapping as ORM;
+
 /**
  * Class Log
  *
@@ -28,67 +29,11 @@ use Doctrine\ORM\Mapping as ORM;
  * 
  * @author Pascal DENIS <pascal.denis.75@gmail.com>
  *
- * @ORM\Entity(repositoryClass="SnideRedmon\Repository\LogRepository")
+ * 
+ * @ORM\Entity
  * @ORM\Table(name="Logs")
  */
-class Log extends ModelLog
+class Log extends BaseLog
 {
-    /**
-     * ID
-     * 
-     * @var string 
-     * 
-     * @ORM\Id
-     * @ORM\Column(type="integer")
-     * @ORM\GeneratedValue(strategy="AUTO")
-     */
-    protected $id;
-    
-    /**
-     * Created date
-     * 
-     * @var \DateTime
-     *
-     * @ORM\Column(type="datetime")
-     */
-    protected $createdAt;
-    
-    /**
-     * Memory usage
-     * 
-     * @var string 
-     *
-     * @ORM\Column(type="integer", length=25)
-     */
-    protected $memory;
-
-    /**
-     * CPU usage
-     * 
-     * @var string
-     * 
-     * @ORM\Column(type="decimal")
-     */
-    protected $cpu;
-
-    /**
-     * nbClients connected
-     * 
-     * @var int
-     *
-     * @ORM\Column(type="integer")
-     */
-    protected $nbClients;
-
-
-    /**
-     * Instance
-     * 
-     * @var Instance
-     *
-     * @ORM\ManyToOne(targetEntity="SnideRedmon\Entity\Instance", inversedBy="logs")
-     * @ORM\JoinColumn(onDelete="cascade")
-     */
-    protected $instance;
 
 }

@@ -93,9 +93,12 @@ return array(
                     )
                 ),
                 'update' => array(
-                    'type'    => 'method',
+                    'type'    => 'segment',
                     'options' => array(
-                        'route'    => '/update',
+                        'route'    => '/update/[:id]',
+                        'constraints' => array(
+                            'id' => '[0-9]+'
+                        ),
                         'verb'     => 'post',
                         'defaults' => array(
                             'controller' => 'SnideRedmon\Controller\Instance',

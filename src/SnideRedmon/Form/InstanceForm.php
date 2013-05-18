@@ -68,7 +68,8 @@ class InstanceForm extends Form
             'type' => 'Submit',
             'attributes' => array(
                 'value' => 'Submit',
-                'id' => 'submitbutton',
+                'id'    => 'submitbutton',
+                'class' => 'btn btn-submit'
             ),
         ));
     }

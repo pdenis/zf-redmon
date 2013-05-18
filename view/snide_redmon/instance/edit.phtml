@@ -1,21 +1,37 @@
 <?php
 
 $title = 'Edit an instance';
+
 $this->headTitle($title);
 ?>
-<h1><?php echo $this->escapeHtml($title); ?></h1>
-<?php
-$form = $this->form;
-$form->setAttribute(
-	'action', 
-	$this->url('snide_redmon_instance/update')
-);
-$form->prepare();
 
-echo $this->form()->openTag($form);
-echo $this->formHidden($form->get('id'));
-echo $this->formRow($form->get('name'));
-echo $this->formRow($form->get('host'));
-echo $this->formRow($form->get('port'));
-echo $this->formSubmit($form->get('submit'));
-echo $this->form()->closeTag();
+<div class="span3 pull-right">
+    <div class="well well-large add_link">
+        <a class="black" href="<?= $this->url('snide_redmon_instance/delete', array('id' => $instance->getId())) ?>">
+            <img class="pull-left" src="<?= $this->basePath() . '/modules/snide_redmon/img/del.png' ?>" width="20"/>
+            <strong>Delete this instance</strong></a>
+    </div>
+</div>
+
+<h1><?php echo $this->escapeHtml($title); ?></h1>
+
+<?php
+$this->form->setAttribute(
+	'action', 
+	$this->url('snide_redmon_instance/update', array('id' => $instance->getId()))
+);
+$this->form->prepare();
+echo $this->form()->openTag($this->form);
+?>
+<?= $this->formHidden($this->form->get('id')); ?>
+<div class="field">
+<?= $this->formRow($this->form->get('name')); ?>
+</div>
+<div class="field">
+<?= $this->formRow($this->form->get('host')); ?>
+</div>
+<div class="field">
+<?= $this->formRow($this->form->get('port')); ?>
+</div>
+<?= $this->formSubmit($this->form->get('submit')); ?>
+<?php echo $this->form()->closeTag(); ?>

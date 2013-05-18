@@ -19,6 +19,8 @@
 
 namespace SnideRedmon\Controller;
 
+use Ringo\PhpRedmon\Model\Instance;
+
 /**
  * Class InstanceController
  *
@@ -54,11 +56,11 @@ class InstanceController extends Controller
             $form->setData($request->getPost());
             if ($form->isValid()) {
                 $this->getManager()->create($form->getObject());
-                $this->setFlahsMessage('success', 'Instance created successfully');
+                $this->setFlashMessage('success', 'Instance created successfully');
 
                 return $this->redirect()->toRoute('snide_redmon_instance');
             }else {
-                $this->setFlahsMessage('error', 'Something went wrong');
+                $this->setFlashMessage('error', 'Something went wrong');
             }
 		}
 		
@@ -71,24 +73,25 @@ class InstanceController extends Controller
 	{
 
 		$request = $this->getRequest();
-		$instance = $this->getManager()->find($this->params('id'));
-		$form = $this->getForm();
+		$instance = $this->getManager()->find($this->getEvent()->getRouteMatch()->getParam('id'));
+		$form = $this->getForm($instance);
 		if ($request->isPost()) {
             $form->setData($request->getPost());
 
             if ($form->isValid()) {
-               
                 $this->getManager()->update($form->getObject());
-                $this->setFlahsMessage('success', 'Instance updated successfully');
-                
+                $this->setFlashMessage('success', 'Instance updated successfully');
                 return $this->redirect()->toRoute('snide_redmon_instance');
             }else {
-                $this->setFlahsMessage('error', 'Something went wrong');
+                $this->setFlashMessage('error', 'Something went wrong');
             }
 		}
+			
+		
 		
 		return $this->createView('instance/edit', array(
-			'form' => $form
+			'form'     => $form,
+			'instance' => $instance
 		));
 	}
 
@@ -97,16 +100,14 @@ class InstanceController extends Controller
 		$instance = $this->getManager()->find($this->params('id'));
 		if($instance) {
 			try {
-				$this->getManager()->remove($instance);
-				$this->setFlahsMessage('success', 'Instance removed successfully');
+				$this->getManager()->delete($instance);
+				$this->setFlashMessage('success', 'Instance removed successfully');
 			}catch(\Exception $e) {
 				$this->setFlashMessage('error', 'An error has occured : '.$e->getMessage());
 			}
 		}
 
-		return $this->createView('instances', array(
-			'form' => $form
-		));
+		return $this->redirect()->toRoute('snide_redmon');
 	}
 
 	/**

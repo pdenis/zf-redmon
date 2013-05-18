@@ -19,9 +19,9 @@
     "minimum-stability": "dev",
     "require": {
         "php": ">=5.3.3",
-        "zendframework/zendframework": "2.*",
+        "ringoteam/phpredmon-lib": "dev-master",
         "doctrine/doctrine-orm-module": "0.7.0",
-        "predis/predis": "dev-master"
+        
     },
     "autoload": {
         "psr-0": {

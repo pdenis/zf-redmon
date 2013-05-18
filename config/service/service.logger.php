@@ -10,7 +10,7 @@ return array(
 			if(isset($config['snide_redmon.logger.nb_days'])) {
 				$nbDays = $config['snide_redmon.logger.nb_days'];
 			}
-			return new \SnideRedmon\Logger\InstanceLogger($instanceManager, $logManager, $worker, $nbDays);
+			return new \Ring\PhpRedmon\Logger\InstanceLogger($instanceManager, $logManager, $worker, $nbDays);
         }
     ),
 );

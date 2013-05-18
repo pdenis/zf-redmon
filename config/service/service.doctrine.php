@@ -4,7 +4,6 @@ return array(
 	'invokables' => array(
 		'snide_redmon.entity.instance' => 'SnideRedmon\Entity\Instance',
 		'snide_redmon.entity.log'      => 'SnideRedmon\Entity\Log',
-		'snide_redmon.entity.database' => 'SnideRedmon\Entity\Database',
 	),
 	'factories' => array(
         'snide_redmon.repository.instance' => function($sm) {

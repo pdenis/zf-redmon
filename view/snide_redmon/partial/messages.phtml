@@ -1,0 +1,15 @@
+<?php if(is_array($nsMessages) && !empty($nsMessages)) { ?>
+<div class="container">
+    <?php foreach($nsMessages as $ns => $messages) { ?>
+        <?php if(is_array($messages)) { ?>
+                <?php foreach($messages as $msg) { ?>
+                <div class="alert alert-<?= $ns ?>">
+                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                    <?= $msg ?>
+                </div>
+                <?php } ?>
+            <?php } ?>
+        
+    <?php } ?>
+</div>
+<?php } ?>

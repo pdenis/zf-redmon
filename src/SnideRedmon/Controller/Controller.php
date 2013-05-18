@@ -48,10 +48,10 @@ class Controller extends AbstractActionController
     {
         $this->layout('layout');
         
-
         $this->layout()->setVariables(array(
             'instance'  => $this->getCurrentInstance(),
             'instances' => $this->getManager()->findAll(),
+            'nsMessages'  => $this->getNsMessages(),
             'route'     => $this->getRouteName()
         ));
     }
@@ -124,6 +124,17 @@ class Controller extends AbstractActionController
             return false;
         }
         return false;
+    }
+
+    protected function getNsMessages()
+    {
+        $messages = array();
+        $namespaces = array('success', 'error', 'notice');
+        foreach($namespaces as $ns) {
+            $messages[$ns] = $this->flashMessenger()->setNamespace($ns)->getMessages();
+        }
+
+        return $messages;
     }
 
     protected function setFlashMessage($ns, $message)

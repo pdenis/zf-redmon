@@ -9,16 +9,16 @@ return array(
 			if(isset($config['snide_redmon.entity.instance.class'])) {
 				$class = $config['snide_redmon.entity.instance.class'];
 			}
-			return new \SnideRedmon\Manager\InstanceManager($instanceRepository, $class);
+
+			return new \Ringo\PhpRedmon\Manager\InstanceManager($instanceRepository, $class);
         },
         'snide_redmon.manager.log' => function($sm) {
-			$logRepository = $sm->get('snide_redmon.repository.log');
 			$class = '';
 			$config = $sm->get('Config');
 			if(isset($config['snide_redmon.entity.log.class'])) {
 				$class = $config['snide_redmon.entity.log.class'];
 			}
-			return new \SnideRedmon\Manager\LogManager($logRepository, $class);
+			return new \Ringo\PhpRedmon\Manager\LogManager($class);
         }
     ),
 );

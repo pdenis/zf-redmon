@@ -9,7 +9,8 @@ return array(
 		),
 		'orm_default' => array(
 			'drivers' => array(
-				'SnideRedmon\Entity' => 'snide_redmon_entities'
+				'SnideRedmon\Entity' => 'snide_redmon_entities',
+				'Ringo\PhpRedmon\Entity' => 'snide_redmon_entities'
 			)
 		)
 	)

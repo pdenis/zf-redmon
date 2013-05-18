@@ -20,7 +20,7 @@
 namespace SnideRedmon\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
-use SnideRedmon\Model\Instance as ModelInstance;
+use Ringo\PhpRedmon\Entity\Instance as BaseInstance;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -30,58 +30,9 @@ use Doctrine\ORM\Mapping as ORM;
  * 
  * @author Pascal DENIS <pascal.denis.75@gmail.com>
  *
- * @ORM\Entity(repositoryClass="SnideRedmon\Repository\InstanceRepository")
+ * @ORM\Entity(repositoryClass="Ringo\PhpRedmon\Doctrine\Repository\InstanceRepository")
  * @ORM\Table(name="Instances")
- * })
  */
-class Instance extends ModelInstance
+class Instance extends BaseInstance
 {
-    /**
-     * ID
-     * 
-     * @var string
-     *
-     * @ORM\Id
-     * @ORM\Column(type="integer")
-     * @ORM\GeneratedValue(strategy="AUTO")
-     */
-    protected $id;
-    
-    /**
-     * Name
-     * 
-     * @var string 
-     *
-     * @ORM\Column(type="string", length=128)
-     */
-    protected $name;
-    
-    /**
-     * Port
-     * 
-     * @var string 
-     *
-     * @ORM\Column(type="string", length=5)
-     */
-    protected $port;
-    
-    /**
-     * Host
-     * 
-     * @var string 
-     *
-     * @ORM\Column(type="string", length=128)
-     */
-    protected $host;
-
-    /**
-     * Logs
-     * 
-     * @var \Doctrine\Common\Collections\ArrayCollection  
-     *
-     *
-     * @ORM\OneToMany(targetEntity="SnideRedmon\Entity\Log", mappedBy="instance", cascade={"persist"}, fetch="EXTRA_LAZY")
-     * @ORM\OrderBy({"createdAt"="ASC"})
-     */
-    protected $logs;
 }
