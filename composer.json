@@ -20,7 +20,7 @@
     "require": {
         "php": ">=5.3.3",
         "ringoteam/phpredmon-lib": "dev-master",
-        "doctrine/doctrine-orm-module": "0.7.0",
+        "doctrine/doctrine-orm-module": "0.7.0"
         
     },
     "autoload": {

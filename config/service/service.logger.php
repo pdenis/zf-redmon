@@ -7,10 +7,10 @@ return array(
 			$worker  = $sm->get('snide_redmon.worker.instance');
 			$logManager = $sm->get('snide_redmon.manager.log');
 			$nbDays = 30; // Default value
-			if(isset($config['snide_redmon.logger.nb_days'])) {
-				$nbDays = $config['snide_redmon.logger.nb_days'];
+			if(isset($config['snide_redmon']['logger']['nb_days'])) {
+				$nbDays = $config['snide_redmon']['logger']['nb_days'];
 			}
-			return new \Ring\PhpRedmon\Logger\InstanceLogger($instanceManager, $logManager, $worker, $nbDays);
+			return new \Ringo\PhpRedmon\Logger\InstanceLogger($instanceManager, $logManager, $worker, $nbDays);
         }
     ),
 );
