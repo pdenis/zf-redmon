@@ -27,13 +27,13 @@ use SnideRedmon\Controller\Controller;
  * @author Pascal DENIS <pascal.denis.75@gmail.com>
  */
 class AdminController extends Controller
-{
-	public function indexAction()
-	{
-		return $this->createView('admin/index', array());
-	}
+{   
+    public function indexAction()
+    {
+        return $this->createView('admin/index', array());
+    }
 
-	public function flushAllAction()
+    public function flushAllAction()
     {
         try {
             $this->getWorker()->execute('flushAll');

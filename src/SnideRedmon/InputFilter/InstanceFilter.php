@@ -29,10 +29,10 @@ use Zend\InputFilter\Factory as InputFactory;
  */
 class InstanceFilter extends InputFilter
 {
-	public function __construct()
-	{
-		$this->add(
-			array(
+    public function __construct()
+    {
+        $this->add(
+            array(
                 'name'     => 'id',
                 'required' => true,
                 'filters'  => array(
@@ -41,8 +41,8 @@ class InstanceFilter extends InputFilter
             )
         );
 
-		$this->add(
-			array(
+        $this->add(
+            array(
                 'name'     => 'port',
                 'required' => true,
                 'filters'  => array(
@@ -61,7 +61,7 @@ class InstanceFilter extends InputFilter
         );
 
         $this->add(
-			array(
+            array(
                 'name'     => 'host',
                 'required' => true,
                 'filters'  => array(
@@ -79,10 +79,10 @@ class InstanceFilter extends InputFilter
                     ),
                 ),
             )
-		);
+        );
 
-		$this->add(
-			array(
+        $this->add(
+            array(
                 'name'     => 'name',
                 'required' => true,
                 'filters'  => array(
@@ -100,7 +100,7 @@ class InstanceFilter extends InputFilter
                     ),
                 ),
             )
-		);
+        );
 
-	}
+    }
 }

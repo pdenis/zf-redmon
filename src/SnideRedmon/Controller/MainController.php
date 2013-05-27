@@ -26,5 +26,5 @@ namespace SnideRedmon\Controller;
  */
 class MainController extends Controller
 {
-	
+    
 }

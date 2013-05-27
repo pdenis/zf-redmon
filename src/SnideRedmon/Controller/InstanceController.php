@@ -28,9 +28,9 @@ use Ringo\PhpRedmon\Model\Instance;
  */
 class InstanceController extends Controller
 {
-	public function indexAction()
-	{
-		// Get all instances
+    public function indexAction()
+    {
+        // Get all instances
         $instances = $this->getManager()->findAll();
         
         $worker = $this->getServiceLocator()->get('snide_redmon.worker.instance');
@@ -42,17 +42,17 @@ class InstanceController extends Controller
                 $instances[$index]->setError($worker->getMessage());
             }
         }
-		return $this->createView('instance/index', array(
-			'instances' => $instances
-		));
-	}
+        return $this->createView('instance/index', array(
+            'instances' => $instances
+        ));
+    }
 
-	public function createAction()
-	{
-		$form = $this->getForm();
-		$request = $this->getRequest();
+    public function createAction()
+    {
+        $form = $this->getForm();
+        $request = $this->getRequest();
 
-		if ($request->isPost()) {
+        if ($request->isPost()) {
             $form->setData($request->getPost());
             if ($form->isValid()) {
                 $this->getManager()->create($form->getObject());
@@ -62,20 +62,20 @@ class InstanceController extends Controller
             }else {
                 $this->setFlashMessage('error', 'Something went wrong');
             }
-		}
-		
-		return $this->createView('instance/new', array(
-			'form' => $form
-		));
-	}
+        }
+        
+        return $this->createView('instance/new', array(
+            'form' => $form
+        ));
+    }
 
-	public function updateAction()
-	{
+    public function updateAction()
+    {
 
-		$request = $this->getRequest();
-		$instance = $this->getManager()->find($this->getEvent()->getRouteMatch()->getParam('id'));
-		$form = $this->getForm($instance);
-		if ($request->isPost()) {
+        $request = $this->getRequest();
+        $instance = $this->getManager()->find($this->getEvent()->getRouteMatch()->getParam('id'));
+        $form = $this->getForm($instance);
+        if ($request->isPost()) {
             $form->setData($request->getPost());
 
             if ($form->isValid()) {
@@ -85,32 +85,32 @@ class InstanceController extends Controller
             }else {
                 $this->setFlashMessage('error', 'Something went wrong');
             }
-		}
-			
-		
-		
-		return $this->createView('instance/edit', array(
-			'form'     => $form,
-			'instance' => $instance
-		));
-	}
+        }
+            
+        
+        
+        return $this->createView('instance/edit', array(
+            'form'     => $form,
+            'instance' => $instance
+        ));
+    }
 
-	public function deleteAction()
-	{
-		$instance = $this->getManager()->find($this->params('id'));
-		if($instance) {
-			try {
-				$this->getManager()->delete($instance);
-				$this->setFlashMessage('success', 'Instance removed successfully');
-			}catch(\Exception $e) {
-				$this->setFlashMessage('error', 'An error has occured : '.$e->getMessage());
-			}
-		}
+    public function deleteAction()
+    {
+        $instance = $this->getManager()->find($this->params('id'));
+        if($instance) {
+            try {
+                $this->getManager()->delete($instance);
+                $this->setFlashMessage('success', 'Instance removed successfully');
+            }catch(\Exception $e) {
+                $this->setFlashMessage('error', 'An error has occured : '.$e->getMessage());
+            }
+        }
 
-		return $this->redirect()->toRoute('snide_redmon');
-	}
+        return $this->redirect()->toRoute('snide_redmon');
+    }
 
-	/**
+    /**
      * Select action
      * Change the current instance
      * 
@@ -134,14 +134,14 @@ class InstanceController extends Controller
         return $this->redirect()->toRoute('snide_redmon');
     }
 
-	protected function getForm(Instance $instance = null)
-	{
-		$form = $this->getServiceLocator()->get('snide_redmon.form.instance');
-		if(!$instance) {
-			$instance = $this->getServiceLocator()->get('snide_redmon.entity.instance');
-		}
-		$form->bind($instance);
+    protected function getForm(Instance $instance = null)
+    {
+        $form = $this->getServiceLocator()->get('snide_redmon.form.instance');
+        if(!$instance) {
+            $instance = $this->getServiceLocator()->get('snide_redmon.entity.instance');
+        }
+        $form->bind($instance);
 
-		return $form;
-	}
+        return $form;
+    }
 }

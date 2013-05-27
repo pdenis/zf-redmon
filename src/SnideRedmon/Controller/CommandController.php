@@ -28,7 +28,7 @@ use Zend\Console\Request as ConsoleRequest;
  */
 class CommandController extends Controller
 {
-	public function executeAction()
+    public function executeAction()
     {
         $request = $this->getRequest();
         try {

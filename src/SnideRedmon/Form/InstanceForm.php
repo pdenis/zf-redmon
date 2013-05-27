@@ -29,7 +29,7 @@ use Zend\Stdlib\Hydrator\ClassMethods;
  */
 class InstanceForm extends Form
 {
-	public function __construct($name = null)
+    public function __construct($name = null)
     {
         parent::__construct($name);
         $this->setHydrator(new ClassMethods());

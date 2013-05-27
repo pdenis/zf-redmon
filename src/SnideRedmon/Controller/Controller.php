@@ -31,8 +31,8 @@ use Zend\Session\Container;
  */
 class Controller extends AbstractActionController
 {
-	protected function createView($path= '', $params = array())
-	{
+    protected function createView($path= '', $params = array())
+    {
         $this->initLayout();
 
         $view = new ViewModel($params);
@@ -41,7 +41,7 @@ class Controller extends AbstractActionController
             $view->setTemplate($config['view_manager']['template_path'].$path);
         }
         return $view;
-	}
+    }
 
     
     protected function initLayout()
@@ -65,7 +65,7 @@ class Controller extends AbstractActionController
 
         return $routeMatch->getMatchedRouteName();
     }
-	/**
+    /**
      * Get instance manager
      * 
      * @return mixed
